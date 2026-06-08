@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Costruzioni Guerra Srl – Impresa di Costruzioni a Verona</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --red: #1A5FA8;
+    --red-dark: #0E3F75;
+    --red-light: #E6F0FA;
+    --cream: #F0F6FC;
+    --warm-white: #F5F9FD;
+    --charcoal: #0B1F35;
+    --mid: #4A5A6A;
+    --light: #C8DCF0;
+    --gold: #64C8E8;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--warm-white);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem;
+    height: 70px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+  }
+
+  .nav-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 0.15em;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .nav-logo span {
+    color: rgba(255,255,255,0.55);
+    font-weight: 300;
+    font-size: 0.8rem;
+    display: block;
+    letter-spacing: 0.25em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
+  }
+
+  .nav-links a:hover {
+    color: #fff;
+    border-bottom-color: rgba(255,255,255,0.5);
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: var(--charcoal);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 5rem 80px 5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    color: #fff;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--red);
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.65);
+    max-width: 420px;
+    margin-bottom: 3rem;
+    font-weight: 300;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transition: background 0.25s, transform 0.2s;
+    align-self: flex-start;
+  }
+
+  .btn-primary:hover {
+    background: var(--red-dark);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    display: inline-block;
+    border: 1.5px solid rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    padding: 0.9rem 2.2rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transition: all 0.25s;
+    margin-left: 1rem;
+  }
+
+  .btn-outline:hover {
+    border-color: #fff;
+    color: #fff;
+  }
+
+  .hero-visual {
+    position: relative;
+    background: linear-gradient(135deg, #2a2a2a 0%, #111 100%);
+    overflow: hidden;
+  }
+
+  .hero-visual-inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Big architectural SVG illustration */
+  .hero-arch {
+    width: 100%;
+    height: 100%;
+    opacity: 0.15;
+  }
+
+  .hero-red-block {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: var(--red);
+  }
+
+  .hero-stat-strip {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--red);
+    display: flex;
+    z-index: 10;
+  }
+
+  .hero-stat {
+    flex: 1;
+    padding: 1.8rem 2rem;
+    border-right: 1px solid rgba(255,255,255,0.15);
+    text-align: center;
+  }
+
+  .hero-stat:last-child { border-right: none; }
+
+  .hero-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+    display: block;
+  }
+
+  .hero-stat-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    margin-top: 0.4rem;
+    display: block;
+  }
+
+  /* BAND */
+  .red-band {
+    background: var(--red);
+    padding: 2rem 5rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .red-band-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    font-style: italic;
+  }
+
+  .red-band-line {
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,0.25);
+  }
+
+  .red-band-meta {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    font-weight: 500;
+  }
+
+  /* CHI SIAMO */
+  .chi-siamo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 80vh;
+  }
+
+  .chi-siamo-image {
+    background: var(--charcoal);
+    position: relative;
+    overflow: hidden;
+    min-height: 500px;
+  }
+
+  .chi-siamo-image svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+  }
+
+  .chi-siamo-image-label {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 2.5rem;
+    right: 2.5rem;
+  }
+
+  .chi-siamo-image-label h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .chi-siamo-image-label p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #fff;
+    line-height: 1.4;
+  }
+
+  .chi-siamo-content {
+    background: var(--cream);
+    padding: 6rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .section-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 2rem;
+    color: var(--charcoal);
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--red);
+  }
+
+  .body-text {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: var(--mid);
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+  }
+
+  .body-text strong {
+    font-weight: 600;
+    color: var(--charcoal);
+  }
+
+  .red-accent-line {
+    width: 50px;
+    height: 3px;
+    background: var(--red);
+    margin-bottom: 2.5rem;
+  }
+
+  /* PILLARS */
+  .pillars {
+    background: var(--charcoal);
+    padding: 7rem 5rem;
+  }
+
+  .pillars-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .pillars-header .section-title { color: #fff; }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .pillar {
+    padding: 3.5rem 2.5rem;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    position: relative;
+  }
+
+  .pillar:last-child { border-right: none; }
+
+  .pillar::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--red);
+    transition: height 0.4s ease;
+  }
+
+  .pillar:hover::after { height: 100%; }
+
+  .pillar-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: rgba(255,255,255,0.07);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .pillar-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .pillar-text {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.5);
+    font-weight: 300;
+  }
+
+  /* PROGETTI */
+  .progetti {
+    background: var(--warm-white);
+    padding: 7rem 5rem;
+  }
+
+  .progetti-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+  }
+
+  .progetti-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+  }
+
+  .progetto-card {
+    position: relative;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: var(--charcoal);
+    cursor: pointer;
+  }
+
+  .progetto-card svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    transition: transform 0.6s ease;
+  }
+
+  .progetto-card:hover svg { transform: scale(1.04); }
+
+  .progetto-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    z-index: 2;
+  }
+
+  .progetto-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .progetto-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+    margin-bottom: 0.4rem;
+  }
+
+  .progetto-sub {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
+    font-weight: 300;
+  }
+
+  .progetto-card-lg {
+    grid-column: span 2;
+    aspect-ratio: 16/6;
+  }
+
+  /* CERTIFICAZIONI */
+  .cert-section {
+    background: var(--red);
+    padding: 6rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .cert-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.2;
+    font-style: italic;
+  }
+
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .cert-item {
+    background: rgba(255,255,255,0.1);
+    padding: 1.8rem;
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: background 0.25s;
+    cursor: pointer;
+  }
+
+  .cert-item:hover { background: rgba(255,255,255,0.18); }
+
+  .cert-icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 1rem;
+    opacity: 0.7;
+  }
+
+  .cert-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 0.4rem;
+  }
+
+  .cert-desc {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
+    font-weight: 300;
+  }
+
+  /* CONTATTI */
+  .contatti {
+    background: var(--cream);
+    padding: 7rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .contatti-info { }
+
+  .contatti-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .contatti-detail-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contatti-detail-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: #fff;
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .contatti-detail-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+
+  .contatti-detail-value {
+    font-size: 1rem;
+    color: var(--charcoal);
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  .contact-form { }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .form-group { margin-bottom: 1rem; }
+
+  .form-label {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mid);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-input, .form-textarea {
+    width: 100%;
+    border: 1px solid var(--light);
+    background: #fff;
+    padding: 0.9rem 1rem;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.95rem;
+    color: var(--charcoal);
+    outline: none;
+    transition: border-color 0.2s;
+    appearance: none;
+  }
+
+  .form-input:focus, .form-textarea:focus {
+    border-color: var(--red);
+  }
+
+  .form-textarea { resize: vertical; min-height: 130px; }
+
+  .btn-submit {
+    background: var(--charcoal);
+    color: #fff;
+    border: none;
+    padding: 1rem 2.8rem;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.25s;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .btn-submit:hover { background: var(--red); }
+
+  /* FOOTER */
+  footer {
+    background: var(--charcoal);
+    padding: 4rem 5rem 2rem;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 2rem;
+  }
+
+  .footer-brand {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .footer-brand span {
+    display: block;
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.3em;
+    font-weight: 300;
+    margin-top: 2px;
+  }
+
+  .footer-tagline {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.7;
+    font-weight: 300;
+    max-width: 280px;
+  }
+
+  .footer-col-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-links { list-style: none; }
+
+  .footer-links li { margin-bottom: 0.8rem; }
+
+  .footer-links a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.45);
+    font-size: 0.85rem;
+    font-weight: 300;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: #fff; }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-copy {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.25);
+    font-weight: 300;
+  }
+
+  .footer-piva {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.25);
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-text > * {
+    animation: fadeUp 0.8s ease both;
+  }
+  .hero-eyebrow { animation-delay: 0.1s; }
+  .hero-title { animation-delay: 0.25s; }
+  .hero-sub { animation-delay: 0.4s; }
+  .hero-btns { animation-delay: 0.55s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    Costruzioni Guerra
+    <span>Impresa di Costruzioni · Verona</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#chi-siamo">Chi Siamo</a></li>
+    <li><a href="#progetti">Lavori</a></li>
+    <li><a href="#certificazioni">Certificazioni</a></li>
+    <li><a href="#contatti">Contatti</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow">Dal 1900 · Famiglia Guerra · Roveré Veronese</p>
+    <h1 class="hero-title">Costruiamo<br><em>con passione</em><br>da tre generazioni.</h1>
+    <p class="hero-sub">Un'impresa di famiglia radicata nella Lessinia Veronese. Tradizione, competenza tecnica e rigore al servizio di ogni progetto.</p>
+    <div class="hero-btns">
+      <a href="#progetti" class="btn-primary">Scopri i progetti</a>
+      <a href="https://www.costruzioniguerra.com/wp-content/uploads/2020/01/brochure-COSTRUZIONI-GUERRA-S.R.L..pdf" class="btn-outline" target="_blank">Scarica brochure</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-visual-inner">
+      <!-- architectural grid illustration -->
+      <svg class="hero-arch" viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="#fff" stroke-width="0.5" fill="none">
+          <!-- Building silhouettes -->
+          <rect x="60" y="200" width="100" height="300"/>
+          <rect x="70" y="230" width="20" height="30"/>
+          <rect x="100" y="230" width="20" height="30"/>
+          <rect x="130" y="230" width="20" height="30"/>
+          <rect x="70" y="280" width="20" height="30"/>
+          <rect x="100" y="280" width="20" height="30"/>
+          <rect x="130" y="280" width="20" height="30"/>
+          <rect x="70" y="330" width="20" height="30"/>
+          <rect x="100" y="330" width="20" height="30"/>
+          <rect x="130" y="330" width="20" height="30"/>
+          <rect x="70" y="380" width="20" height="30"/>
+          <rect x="100" y="380" width="20" height="30"/>
+          <rect x="130" y="380" width="20" height="30"/>
+
+          <rect x="200" y="100" width="140" height="400"/>
+          <line x1="200" y1="150" x2="340" y2="150"/>
+          <line x1="200" y1="200" x2="340" y2="200"/>
+          <line x1="200" y1="250" x2="340" y2="250"/>
+          <line x1="200" y1="300" x2="340" y2="300"/>
+          <line x1="200" y1="350" x2="340" y2="350"/>
+          <line x1="200" y1="400" x2="340" y2="400"/>
+          <line x1="200" y1="450" x2="340" y2="450"/>
+          <rect x="240" y="130" width="30" height="40"/>
+          <rect x="290" y="130" width="30" height="40"/>
+          <rect x="240" y="185" width="30" height="40"/>
+          <rect x="290" y="185" width="30" height="40"/>
+          <rect x="240" y="240" width="30" height="40"/>
+          <rect x="290" y="240" width="30" height="40"/>
+          <rect x="240" y="295" width="30" height="40"/>
+          <rect x="290" y="295" width="30" height="40"/>
+          <rect x="240" y="350" width="30" height="40"/>
+          <rect x="290" y="350" width="30" height="40"/>
+          <rect x="240" y="405" width="30" height="40"/>
+          <rect x="290" y="405" width="30" height="40"/>
+
+          <rect x="390" y="280" width="80" height="220"/>
+          <rect x="400" y="300" width="15" height="25"/>
+          <rect x="425" y="300" width="15" height="25"/>
+          <rect x="450" y="300" width="15" height="25"/>
+          <rect x="400" y="340" width="15" height="25"/>
+          <rect x="425" y="340" width="15" height="25"/>
+          <rect x="450" y="340" width="15" height="25"/>
+          <rect x="400" y="380" width="15" height="25"/>
+          <rect x="425" y="380" width="15" height="25"/>
+          <rect x="450" y="380" width="15" height="25"/>
+          <rect x="400" y="420" width="15" height="25"/>
+          <rect x="425" y="420" width="15" height="25"/>
+          <rect x="450" y="420" width="15" height="25"/>
+
+          <!-- Ground line -->
+          <line x1="30" y1="500" x2="570" y2="500" stroke-width="1.5"/>
+          <!-- Blueprint grid -->
+          <line x1="0" y1="50" x2="600" y2="50" stroke-width="0.2" stroke-dasharray="4 8"/>
+          <line x1="0" y1="100" x2="600" y2="100" stroke-width="0.2" stroke-dasharray="4 8"/>
+          <line x1="0" y1="150" x2="600" y2="150" stroke-width="0.2" stroke-dasharray="4 8"/>
+          <line x1="0" y1="550" x2="600" y2="550" stroke-width="0.2" stroke-dasharray="4 8"/>
+          <line x1="0" y1="600" x2="600" y2="600" stroke-width="0.2" stroke-dasharray="4 8"/>
+          <line x1="50" y1="0" x2="50" y2="700" stroke-width="0.2" stroke-dasharray="4 8"/>
+          <line x1="150" y1="0" x2="150" y2="700" stroke-width="0.2" stroke-dasharray="4 8"/>
+          <line x1="300" y1="0" x2="300" y2="700" stroke-width="0.2" stroke-dasharray="4 8"/>
+          <line x1="450" y1="0" x2="450" y2="700" stroke-width="0.2" stroke-dasharray="4 8"/>
+          <line x1="550" y1="0" x2="550" y2="700" stroke-width="0.2" stroke-dasharray="4 8"/>
+        </g>
+        <!-- Red accent on main building -->
+        <rect x="200" y="100" width="6" height="400" fill="#1A5FA8" opacity="0.6"/>
+      </svg>
+    </div>
+
+    <div class="chi-siamo-image-label" style="z-index:5; position:absolute;">
+      <h3>Sede operativa</h3>
+      <p>Via Grunte 10,<br>Roveré Veronese</p>
+    </div>
+  </div>
+
+  <!-- STAT STRIP at bottom -->
+  <div class="hero-stat-strip" style="grid-column: span 2; position: relative;">
+    <div class="hero-stat">
+      <span class="hero-stat-num">1900</span>
+      <span class="hero-stat-label">Anno di fondazione</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">3ª</span>
+      <span class="hero-stat-label">Generazione familiare</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">12.000</span>
+      <span class="hero-stat-label">m² sede aziendale</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">ISO</span>
+      <span class="hero-stat-label">Certificazione 9001:2015</span>
+    </div>
+  </div>
+</section>
+
+<!-- RED BAND -->
+<div class="red-band">
+  <p class="red-band-text">"L'eccellenza si costruisce mattone per mattone."</p>
+  <div class="red-band-line"></div>
+  <span class="red-band-meta">Costruzioni Guerra Srl · Verona</span>
+</div>
+
+<!-- CHI SIAMO -->
+<section id="chi-siamo" class="chi-siamo">
+  <div class="chi-siamo-image">
+    <svg viewBox="0 0 500 600" xmlns="http://www.w3.org/2000/svg">
+      <rect width="500" height="600" fill="#1a1a1a"/>
+      <!-- Factory/construction site illustration -->
+      <g opacity="0.3">
+        <!-- Capannone principale -->
+        <rect x="50" y="250" width="400" height="250" fill="#3a3a3a"/>
+        <!-- Roof -->
+        <polygon points="30,250 250,150 470,250" fill="#2a2a2a"/>
+        <!-- Door -->
+        <rect x="190" y="380" width="120" height="120" fill="#1a1a1a"/>
+        <!-- Windows -->
+        <rect x="80" y="280" width="60" height="50" fill="#444"/>
+        <rect x="180" y="280" width="60" height="50" fill="#444"/>
+        <rect x="280" y="280" width="60" height="50" fill="#444"/>
+        <rect x="380" y="280" width="60" height="50" fill="#444"/>
+        <!-- Windows 2nd row -->
+        <rect x="80" y="350" width="60" height="50" fill="#333"/>
+        <rect x="380" y="350" width="60" height="50" fill="#333"/>
+        <!-- Ground -->
+        <rect x="0" y="500" width="500" height="100" fill="#111"/>
+        <!-- Crane -->
+        <rect x="390" y="80" width="8" height="170" fill="#555"/>
+        <rect x="390" y="80" width="100" height="6" fill="#555"/>
+        <line x1="490" y1="80" x2="490" y2="180" stroke="#666" stroke-width="2"/>
+      </g>
+      <!-- Red vertical stripe -->
+      <rect x="0" y="0" width="6" height="600" fill="#1A5FA8" opacity="0.8"/>
+    </svg>
+    <div class="chi-siamo-image-label">
+      <h3>La nostra storia</h3>
+      <p>"Un'impresa che nasce dalla terra e cresce con essa."</p>
+    </div>
+  </div>
+
+  <div class="chi-siamo-content">
+    <p class="section-eyebrow">Chi Siamo</p>
+    <div class="red-accent-line"></div>
+    <h2 class="section-title">I professionisti<br><em>dell'edilizia</em></h2>
+    <p class="body-text">
+      La <strong>Costruzioni Guerra Srl</strong> è una società di proprietà della famiglia Guerra, la quale sin dai <strong>primi anni del Novecento</strong> opera nel campo delle costruzioni edili. Oggi, l'impresa di famiglia è amministrata con orgoglio dalla <strong>terza generazione</strong>.
+    </p>
+    <p class="body-text">
+      La sede aziendale si trova in Lessinia, nel paese di <strong>Roveré Veronese</strong>. In Via Grunte sorgono i capannoni e la palazzina degli uffici su una superficie di oltre <strong>12.000 m²</strong>, mentre in località Dosso si trova il deposito inerti e materiali sfusi (6.000 m²).
+    </p>
+    <p class="body-text">
+      La Società ha già ottenuto le concessioni per ampliare la propria sede di <strong>3.500 m³ coperti</strong>, a testimonianza di una crescita solida e pianificata nel tempo.
+    </p>
+    <a href="#contatti" class="btn-primary" style="margin-top: 1rem;">Contattaci</a>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="pillars">
+  <div class="pillars-header">
+    <p class="section-eyebrow" style="color: var(--gold); justify-content: center; display: flex;">I Nostri Valori</p>
+    <h2 class="section-title" style="color:#fff; text-align:center;">Costruiamo su basi <em style="color:var(--red)">solide</em></h2>
+  </div>
+  <div class="pillars-grid">
+    <div class="pillar">
+      <div class="pillar-number">01</div>
+      <div class="pillar-title">Tradizione Familiare</div>
+      <p class="pillar-text">Tre generazioni di esperienza trasmessa di padre in figlio. Una storia centenaria che si riflette nella qualità di ogni intervento.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-number">02</div>
+      <div class="pillar-title">Competenza Tecnica</div>
+      <p class="pillar-text">Qualificazione SOA per lavori pubblici e privati, con certificazione ISO 9001:2015. Professionalità documentata e riconosciuta.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-number">03</div>
+      <div class="pillar-title">Rispetto dei Tempi</div>
+      <p class="pillar-text">La Scuola di Nuvolera consegnata in 461 giorni su 540 previsti. I nostri progetti parlano da soli: promettiamo e manteniamo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROGETTI -->
+<section id="progetti" class="progetti">
+  <div class="progetti-header">
+    <div>
+      <p class="section-eyebrow">I Nostri Lavori</p>
+      <h2 class="section-title">Alcuni dei <em>nostri progetti</em></h2>
+    </div>
+    <a href="https://www.costruzioniguerra.com/lavori-3/" target="_blank" class="btn-primary" style="background:var(--charcoal);">Tutti i progetti →</a>
+  </div>
+
+  <div class="progetti-grid">
+
+    <!-- Project 1 - Scuola Nuvolera -->
+    <div class="progetto-card">
+      <svg viewBox="0 0 500 375" xmlns="http://www.w3.org/2000/svg">
+        <rect width="500" height="375" fill="#2c3e50"/>
+        <g fill="none" stroke="#7fa3c0" stroke-width="1">
+          <!-- School building -->
+          <rect x="60" y="100" width="380" height="200" fill="#34495e"/>
+          <rect x="60" y="80" width="380" height="25" fill="#2c3e50"/>
+          <!-- Windows row 1 -->
+          <rect x="90" y="130" width="50" height="40" fill="#5dade2" opacity="0.6"/>
+          <rect x="160" y="130" width="50" height="40" fill="#5dade2" opacity="0.6"/>
+          <rect x="230" y="130" width="50" height="40" fill="#5dade2" opacity="0.6"/>
+          <rect x="300" y="130" width="50" height="40" fill="#5dade2" opacity="0.6"/>
+          <rect x="370" y="130" width="50" height="40" fill="#5dade2" opacity="0.6"/>
+          <!-- Windows row 2 -->
+          <rect x="90" y="195" width="50" height="40" fill="#5dade2" opacity="0.4"/>
+          <rect x="160" y="195" width="50" height="40" fill="#5dade2" opacity="0.4"/>
+          <rect x="300" y="195" width="50" height="40" fill="#5dade2" opacity="0.4"/>
+          <rect x="370" y="195" width="50" height="40" fill="#5dade2" opacity="0.4"/>
+          <!-- Door -->
+          <rect x="215" y="220" width="70" height="80" fill="#1a252f"/>
+          <!-- Ground -->
+          <rect x="0" y="300" width="500" height="75" fill="#27ae60" opacity="0.2"/>
+          <rect x="0" y="335" width="500" height="40" fill="#229954" opacity="0.15"/>
+        </g>
+        <rect x="0" y="0" width="4" height="375" fill="#1A5FA8" opacity="0.7"/>
+      </svg>
+      <div class="progetto-overlay">
+        <span class="progetto-tag">Nuovo · 2008</span>
+        <h3 class="progetto-title">Scuola di Nuvolera</h3>
+        <p class="progetto-sub">Brescia · Consegnata in anticipo: 461 gg su 540 previsti</p>
+      </div>
+    </div>
+
+    <!-- Project 2 - Forno Bonomi -->
+    <div class="progetto-card">
+      <svg viewBox="0 0 500 375" xmlns="http://www.w3.org/2000/svg">
+        <rect width="500" height="375" fill="#1a1a2e"/>
+        <g fill="none">
+          <!-- Industrial building -->
+          <rect x="40" y="150" width="420" height="180" fill="#16213e" stroke="#c8a050" stroke-width="1"/>
+          <!-- Roof structure -->
+          <polygon points="30,150 500,150 500,120 250,90 0,120 0,150" fill="#0f3460" stroke="#c8a050" stroke-width="0.5"/>
+          <!-- Big industrial doors -->
+          <rect x="60" y="220" width="100" height="110" fill="#0d1b2a"/>
+          <rect x="200" y="220" width="100" height="110" fill="#0d1b2a"/>
+          <rect x="340" y="220" width="100" height="110" fill="#0d1b2a"/>
+          <!-- Skylights on roof -->
+          <rect x="100" y="95" width="60" height="30" fill="#c8a050" opacity="0.3"/>
+          <rect x="220" y="95" width="60" height="30" fill="#c8a050" opacity="0.3"/>
+          <rect x="340" y="95" width="60" height="30" fill="#c8a050" opacity="0.3"/>
+          <!-- Ground -->
+          <rect x="0" y="330" width="500" height="45" fill="#111" stroke="none"/>
+        </g>
+        <rect x="0" y="0" width="4" height="375" fill="#1A5FA8" opacity="0.7"/>
+      </svg>
+      <div class="progetto-overlay">
+        <span class="progetto-tag">Industriale · 2009–2010</span>
+        <h3 class="progetto-title">Forno Bonomi S.p.A.</h3>
+        <p class="progetto-sub">Ampliamento impianto produttivo · 9 mesi di lavori</p>
+      </div>
+    </div>
+
+    <!-- Project 3 - LARGE - Polo Scolastico Tregnago -->
+    <div class="progetto-card progetto-card-lg">
+      <svg viewBox="0 0 1000 375" xmlns="http://www.w3.org/2000/svg">
+        <rect width="1000" height="375" fill="#1c2833"/>
+        <g fill="none">
+          <!-- Large school complex -->
+          <rect x="80" y="100" width="260" height="220" fill="#2e4057" stroke="#85c1e9" stroke-width="0.5"/>
+          <rect x="370" y="130" width="300" height="190" fill="#2e4057" stroke="#85c1e9" stroke-width="0.5"/>
+          <rect x="700" y="150" width="200" height="170" fill="#2e4057" stroke="#85c1e9" stroke-width="0.5"/>
+          <!-- Connecting corridors -->
+          <rect x="340" y="180" width="35" height="80" fill="#253443" stroke="#85c1e9" stroke-width="0.5"/>
+          <rect x="668" y="195" width="35" height="65" fill="#253443" stroke="#85c1e9" stroke-width="0.5"/>
+          <!-- Windows all buildings -->
+          <rect x="110" y="130" width="35" height="28" fill="#85c1e9" opacity="0.5"/>
+          <rect x="165" y="130" width="35" height="28" fill="#85c1e9" opacity="0.5"/>
+          <rect x="220" y="130" width="35" height="28" fill="#85c1e9" opacity="0.5"/>
+          <rect x="275" y="130" width="35" height="28" fill="#85c1e9" opacity="0.5"/>
+          <rect x="110" y="185" width="35" height="28" fill="#85c1e9" opacity="0.3"/>
+          <rect x="165" y="185" width="35" height="28" fill="#85c1e9" opacity="0.3"/>
+          <rect x="220" y="185" width="35" height="28" fill="#85c1e9" opacity="0.3"/>
+          <rect x="275" y="185" width="35" height="28" fill="#85c1e9" opacity="0.3"/>
+
+          <rect x="400" y="160" width="35" height="28" fill="#85c1e9" opacity="0.5"/>
+          <rect x="455" y="160" width="35" height="28" fill="#85c1e9" opacity="0.5"/>
+          <rect x="510" y="160" width="35" height="28" fill="#85c1e9" opacity="0.5"/>
+          <rect x="565" y="160" width="35" height="28" fill="#85c1e9" opacity="0.5"/>
+          <rect x="620" y="160" width="35" height="28" fill="#85c1e9" opacity="0.5"/>
+
+          <rect x="730" y="180" width="30" height="24" fill="#85c1e9" opacity="0.4"/>
+          <rect x="775" y="180" width="30" height="24" fill="#85c1e9" opacity="0.4"/>
+          <rect x="820" y="180" width="30" height="24" fill="#85c1e9" opacity="0.4"/>
+          <rect x="865" y="180" width="30" height="24" fill="#85c1e9" opacity="0.4"/>
+
+          <!-- Doors -->
+          <rect x="185" y="270" width="50" height="50" fill="#1a2530"/>
+          <rect x="490" y="270" width="50" height="50" fill="#1a2530"/>
+          <rect x="780" y="276" width="50" height="44" fill="#1a2530"/>
+
+          <!-- Ground -->
+          <rect x="0" y="320" width="1000" height="55" fill="#111"/>
+          <!-- Trees/green -->
+          <ellipse cx="60" cy="310" rx="25" ry="20" fill="#1e8449" opacity="0.4"/>
+          <ellipse cx="940" cy="310" rx="25" ry="20" fill="#1e8449" opacity="0.4"/>
+        </g>
+        <rect x="0" y="0" width="4" height="375" fill="#1A5FA8" opacity="0.7"/>
+      </svg>
+      <div class="progetto-overlay">
+        <span class="progetto-tag">Nuovo · 2011 · Opera Pubblica</span>
+        <h3 class="progetto-title">Nuovo Polo Scolastico di Tregnago</h3>
+        <p class="progetto-sub">Verona · Progetto di eccellenza per l'istruzione veronese · Durata lavori 531 giorni</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CERTIFICAZIONI -->
+<section id="certificazioni" class="cert-section">
+  <div>
+    <p class="section-eyebrow" style="color: rgba(255,255,255,0.6);">Qualità Certificata</p>
+    <h2 class="cert-headline">Ogni progetto, ogni documento,<br>ogni garanzia.</h2>
+  </div>
+
+  <div class="cert-grid">
+    <div class="cert-item">
+      <svg class="cert-icon" viewBox="0 0 36 36" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="18" cy="18" r="14"/>
+        <polyline points="12,18 16,22 24,14"/>
+      </svg>
+      <div class="cert-name">ISO 9001:2015</div>
+      <p class="cert-desc">Sistema di gestione della qualità certificato secondo standard internazionali</p>
+    </div>
+    <div class="cert-item">
+      <svg class="cert-icon" viewBox="0 0 36 36" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="6" y="4" width="24" height="28" rx="2"/>
+        <line x1="12" y1="14" x2="24" y2="14"/>
+        <line x1="12" y1="20" x2="24" y2="20"/>
+        <line x1="12" y1="26" x2="18" y2="26"/>
+      </svg>
+      <div class="cert-name">Attestato SOA</div>
+      <p class="cert-desc">Qualificazione per l'esecuzione di lavori pubblici · Attestazione di Qualificazione</p>
+    </div>
+    <div class="cert-item">
+      <svg class="cert-icon" viewBox="0 0 36 36" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 4 L20 10 L26 10 L21 14 L23 20 L18 16 L13 20 L15 14 L10 10 L16 10 Z"/>
+        <path d="M10 24 L8 32 M26 24 L28 32"/>
+      </svg>
+      <div class="cert-name">Attestato di Asservazione</div>
+      <p class="cert-desc">Documentazione completa e trasparente della nostra attività</p>
+    </div>
+    <div class="cert-item">
+      <svg class="cert-icon" viewBox="0 0 36 36" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 6 C10 6 6 12 6 18 S10 30 18 30 S30 24 30 18 S26 6 18 6"/>
+        <path d="M14 18 L17 21 L22 15"/>
+      </svg>
+      <div class="cert-name">DURC</div>
+      <p class="cert-desc">Documento Unico di Regolarità Contributiva · Regolarità garantita</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATTI -->
+<section id="contatti" class="contatti">
+  <div class="contatti-info">
+    <p class="section-eyebrow">Contatti</p>
+    <div class="red-accent-line"></div>
+    <h2 class="section-title">Parliamo<br>del vostro <em>progetto</em></h2>
+    <p class="body-text" style="margin-bottom: 2.5rem;">Siamo a vostra disposizione per qualsiasi richiesta di informazione, preventivo o sopralluogo. La famiglia Guerra vi aspetta.</p>
+
+    <div class="contatti-detail">
+      <div class="contatti-detail-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" stroke="none" fill="#fff"/></svg>
+      </div>
+      <div>
+        <div class="contatti-detail-label">Sede</div>
+        <div class="contatti-detail-value">Via Grunte, 10<br>Roveré Veronese (VR)</div>
+      </div>
+    </div>
+
+    <div class="contatti-detail">
+      <div class="contatti-detail-icon">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" stroke="none" fill="#fff"/></svg>
+      </div>
+      <div>
+        <div class="contatti-detail-label">Telefono</div>
+        <div class="contatti-detail-value">045 783 55 36<br>045 65 17 133</div>
+      </div>
+    </div>
+
+    <div class="contatti-detail">
+      <div class="contatti-detail-icon">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" stroke="none" fill="#fff"/></svg>
+      </div>
+      <div>
+        <div class="contatti-detail-label">P.IVA</div>
+        <div class="contatti-detail-value">03091960231</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-form">
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Nome</label>
+        <input type="text" class="form-input" placeholder="Mario Rossi">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-input" placeholder="mario@esempio.it">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Azienda / Ente</label>
+      <input type="text" class="form-input" placeholder="Nome azienda o ente pubblico">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Tipo di progetto</label>
+      <input type="text" class="form-input" placeholder="Es. costruzione industriale, opera pubblica...">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Messaggio</label>
+      <textarea class="form-textarea" placeholder="Descrivete il vostro progetto o la vostra richiesta..."></textarea>
+    </div>
+    <button class="btn-submit">Invia la richiesta</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">
+        Costruzioni Guerra
+        <span>Impresa di Costruzioni · Dal 1900</span>
+      </div>
+      <p class="footer-tagline">Una società di proprietà della famiglia Guerra, la quale dai primi anni del Novecento è impegnata con passione nell'attività delle costruzioni edili. Oggi, amministrata con orgoglio dalla terza generazione.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigazione</div>
+      <ul class="footer-links">
+        <li><a href="#chi-siamo">Chi Siamo</a></li>
+        <li><a href="#progetti">I Nostri Lavori</a></li>
+        <li><a href="#certificazioni">Certificazioni</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+        <li><a href="https://www.costruzioniguerra.com/wp-content/uploads/2020/01/brochure-COSTRUZIONI-GUERRA-S.R.L..pdf" target="_blank">Scarica Brochure</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Recapiti</div>
+      <ul class="footer-links">
+        <li><a href="#">Via Grunte, 10</a></li>
+        <li><a href="#">37030 Roveré Veronese (VR)</a></li>
+        <li><a href="tel:0457835536">045 783 55 36</a></li>
+        <li><a href="tel:0456517133">045 65 17 133</a></li>
+        <li><a href="#">P.IVA 03091960231</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2024 Costruzioni Guerra Srl. Tutti i diritti riservati.</p>
+    <p class="footer-piva"><a href="https://www.costruzioniguerra.com/privacy/" style="color:rgba(255,255,255,0.25); text-decoration:none;">Privacy Policy</a> · <a href="https://www.costruzioniguerra.com/cookie-policy/" style="color:rgba(255,255,255,0.25); text-decoration:none;">Cookie Policy</a></p>
+  </div>
+</footer>
+
+<script>
+  // Smooth nav active states
+  const navLinks = document.querySelectorAll('.nav-links a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      navLinks.forEach(l => l.style.borderBottomColor = 'transparent');
+      link.style.borderBottomColor = 'rgba(255,255,255,0.5)';
+    });
+  });
+
+  // Form submit
+  document.querySelector('.btn-submit').addEventListener('click', () => {
+    alert('Grazie per il vostro messaggio! Vi contatteremo presto.');
+  });
+
+  // Scroll-reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.pillar, .progetto-card, .cert-item, .contatti-detail').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
